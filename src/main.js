@@ -2,10 +2,9 @@ import Vue from 'vue'
 import 'iview/dist/iview.min.js'
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
+import $ from 'jquery'
 import VueResource from 'vue-resource'
 import App from './components/App'
-
-// import App from './components/App1'
 
 // 使用插件
 Vue.use(VueResource)
