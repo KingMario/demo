@@ -16,7 +16,7 @@
         <p class="card-text">{{user.login}}</p>
       </div>
     </div>
-   
+
      <!--分页器-->
 
     <div class="pull-right">
