@@ -16,21 +16,18 @@
         <p class="card-text">{{user.login}}</p>
       </div>
     </div>
+   
      <!--分页器-->
+
     <div class="pull-right">
       <Page :total="pagecount" :page-size="pageSize" @on-change="pagechange" v-show="users"  show-elevator></Page>
     </div>
   </div>
 </template>
 <script>
-
 import axios from 'axios'
-
-
-
 //定义一个变量来接收返回的数据
 let items = null
-
 export default {
   props: {
     searchName: {
@@ -45,6 +42,7 @@ export default {
       pageSize: 6,
       users: null,
       error: null,
+
 
     }
   },
@@ -61,8 +59,7 @@ export default {
       axios.get(url).then((response) => {
         console.log(response)
         this.loading = false
-        console.log(response)
-        //切割数据
+        //切割数据  处理分页逻辑
         items = response.data.items
         this.pagecount = items.length
         if (items.length < this.pageSize) {
@@ -75,8 +72,10 @@ export default {
         this.loading = false
         this.error = response.statusText
       })
+
     },
   },
+
   methods: {
     //配置分页器
     pagechange(index) {
@@ -86,14 +85,10 @@ export default {
     }
   }
 }
+
 </script>
 
 <style>
-  .highlight {
-    background: #FF0;
-    color: #E00;
-  }
-
   .card {
   float: left;
   width: 33.333%;
